@@ -61,7 +61,7 @@ jobs:
         git config user.email "capita7-github-actions@capita7.com"
         git add docs
         git commit -m "Created 'docs' folder "
-        git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/samirparhi-dev/${{ github.repository }}.git
+        git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
         git push origin main
 
     - name: Build Docker image
