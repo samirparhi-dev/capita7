@@ -33,11 +33,16 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
-    - name: Build tailwind CSS and zola site
+    - name: Run Tailwind CSS build and Zola
       run: |
-        npx tailwindcss -i styles/styles.css -o static/styles/styles.css && zola build
+        npx tailwindcss -i styles/styles.css -o static/styles/styles.css
+        zola build
+
+    - name: Verify installation
+      run: npm ls --depth=0
+
     - name: Rename folder from 'public' to 'docs'
       run: |
         if [ -d "public" ]; then
