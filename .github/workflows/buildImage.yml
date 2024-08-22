@@ -53,11 +53,10 @@ jobs:
           echo "Folder 'public' does not exist."
           exit 1
         fi
-    - uses: actions/checkout@v3
-    - name: Commit and push changes
 
+    - name: Commit and push changes
       env:
-        GH_PAT: ${{ secrets.CAPITA7_WRITE }} 
+        GITHUB_TOKEN: ${{ secrets.CAPITA7_WRITE }} 
       run: |
         git add docs
         git commit -m "Created 'docs' folder "
