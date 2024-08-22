@@ -53,6 +53,10 @@ jobs:
           echo "Folder 'public' does not exist."
           exit 1
         fi
+    - name: Use GitHub PAT
+      run: echo ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.CAPITA7_WRITE }}
 
     - name: Commit and push changes
       run: |
