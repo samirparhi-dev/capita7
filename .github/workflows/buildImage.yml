@@ -18,8 +18,43 @@ jobs:
       run: |
         echo "TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
 
+    
+
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - uses: taiki-e/install-action@v2
+      with:
+        tool: zola@0.19.1
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build tailwind CSS and zola site
+      run: |
+        npx tailwindcss -i styles/styles.css -o static/styles/styles.css && zola build
+    - name: Rename folder from 'public' to 'docs'
+      run: |
+        if [ -d "public" ]; then
+          mv public docs
+        else
+          echo "Folder 'public' does not exist."
+          exit 1
+        fi
+    - name: Commit and push changes
+      env:
+        GH_PAT: ${{ secrets.GH_PAT }} 
+      run: |
+        git config user.name "capita7-github-actions"
+        git config user.email "capita7-github-actions@capita7.com"
+        git add docs
+        git commit -m "Created 'docs' folder "
+        git push https://github.com/${{ github.repository }}.git HEAD:main
 
     - name: Build Docker image
       run: |
@@ -29,6 +64,10 @@ jobs:
 
         DIGEST=$(docker inspect --format='{{index .Id}}' ghcr.io/${{ github.repository_owner }}/capita-7-website:latest)
         echo "DIGEST=$DIGEST" >> $GITHUB_ENV
+
+
+
+    
  
     - name: Log in to Container Registry
       uses: docker/login-action@v2
