@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="bg-pink-100 py-10 bg-gradient-to-r from-transparent to-zinc-50 flex flex-wrap">
+    <!-- Banner with text and image -->
+    <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Left side text -->
+        <p class="text-purple-700 text-2xl md:text-3xl py-10 lg:text-6xl">
+            Your Thought + Our Capital = ❤️
+        </p>
+        <!-- Right side image -->
+        {% set mdata = get_image_metadata(path="img/brand/capita7-lp.png") %}
+        {% set w = (mdata.width)/2 | int %}
+        {% set h = (mdata.height)/2 | int %}
+        {% set image = resize_image(path="img/brand/capita7-lp.png", width=w, height=h, op="fit_width") %}
+        <!-- <img src="{{ image.url }}" alt="Capital Image" class="h-32 lg:h-48"> -->
+        <img src="{{ image.url }} target="_blank" rel="noopener noreferrer " alt="Capital Image" srcset="/{{"img/brand/capita7-lp.png"}} 1x"/>
+        
+    </div>
+
+    <!-- Section with description -->
+    <div class="container mx-auto p-5">
+        <!-- <div class="w-full md:w-1/2 lg:w-1/3 px-4"> -->
+            <p class="text-fuchsia-700 text-xl py-5 flex flex-wrap md:text-2xl lg:text-3xl">
+                Let's Make Your 💭 a Reality.
+            </p>
+        <!-- </div> -->
+
+        <div class=" container py-10 mx-auto rounded-lg ml-15 px-15 flex justify-between flex-wrap ">
+            <p class="flex rounded-lg  border-fuchsia-900 text-purple-700 border ">
+                <a href="https://ls-lrt.com/about" class="bg-opacity-10 backdrop-blur-lg shadow-lg overflow-hidden hover:bg-purple-100  text-lg text-purple hover:text-black px-5 py-3 rounded-2xl ">  Have an Idea ? Let's Connect ⨠
+                </a>
+            </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Section with categories -->
+<div class="container p-4 mx-auto">
+    <div class="container mx-auto flex-col-reverse  ">
+        <p class="text-4xl text-center py-10 zigzag-underline text-purple-700">
+            🔭 We Specialize Empowering
+        </p>
+    </div>
+    <div class="container flex flex-wrap justify-center">
+        {% for post in section.pages %}
+        <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6 border border-fuchsia-900">
+                    <p class="text-2xl text-purple-700">
+                        <a href="{{ post.permalink }} target="_blank" rel="noopener noreferrer " class="hover:underline">
+                            {{ post.title }}
+                        </a>
+                    </p>
+                    <p class="text-base text-slate-950 mt-4">
+                        {{ post.description }}
+                    </p>
+                    <p class="text-fuchsia-900 mt-4">
+                        <a href="{{ post.permalink }} target="_blank" rel="noopener noreferrer " class="hover:underline">
+                            Know More 👀  → 
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
+

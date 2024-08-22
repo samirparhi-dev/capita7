@@ -1,0 +1,86 @@
+
+base_url = "https://capita7.com"
+
+title = "Capita7.com"
+description = "Venture Capital Company Based in India"
+
+default_language = "en"
+author = "Samir Ranjan Parhi"
+preserve_dotfiles_in_output = false
+compile_sass = true
+minify_html = false
+# internal_level = "error"
+# external_level = "error"
+
+# taxonomies = [
+#     {name = "categories", feed = true, paginate_by=5},
+#     {name = "tags", feed = true, paginate_by=5},
+# ]
+
+taxonomies = [
+    {name = "tags", feed = true, paginate_by=5},
+]
+
+build_search_index = true
+
+
+[markdown]
+
+highlight_code = true
+highlight_theme = "material-dark"
+smart_punctuation = true
+render_footnotes = true
+render_emoji = true
+
+[markdown.extensions]
+heading_attributes = true
+table = true
+tasklist = true
+
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+paths_keep_dates = false
+
+[search]
+
+include_title = true
+include_description = false
+include_path = false
+include_content = true
+index_format = "elasticlunr_javascript"
+
+[extra]
+show_word_count = true
+
+current_year = 2024
+
+my_blog_menu = [
+    {url = "https://capita7.com/", menu = "Home"},
+    {url = "https://capita7.com/about", menu = "About"},
+    {url = "https://capita7.com/products", menu = "Products"},
+    {url = "https://capita7.com/success-stories", menu = "Success Stories"},
+    {url = "https://capita7.com/Inspirations", menu = "Inspiration"},
+    {url = "mailto:info@capita7.com", menu = "Connect"},
+    
+]
+
+social_handle = [
+    {url = "https://github.com/capita-7", social_handle = "gitHub"},
+    {url = "https://github.com/capita-7", social_handle = "LinkedIn"},
+    {url = "https://github.com/capita-7", social_handle = "X"},
+    {url = "mailto:info@capita7.com", social_handle = "Mail"}
+
+]
+company_logo=[{url="img/brand/capita-7.png"}]
+
+skills = [
+    "Angle Investor",
+    "Capital Venture",
+    "Mentoring (Tech, product, Everything)",
+    "Funding",
+    "Social Impact",
+    "Investment"
+]

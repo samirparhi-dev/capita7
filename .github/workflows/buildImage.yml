@@ -1,0 +1,62 @@
+
+name: Build and attest Docker Image
+
+# on:
+#   push:
+#     branches:
+#       - main
+on:
+  workflow_dispatch:
+
+jobs:
+  BuildingAndScanningAppImage:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get current timestamp
+      id: timestamp
+      run: |
+        echo "TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build React app
+      run: npm run build
+
+
+    - name: Build Docker image
+      run: |
+        echo $pwd
+        ls
+        docker build -t ghcr.io/${{ github.repository_owner }}/capita-7-website:latest .
+
+        DIGEST=$(docker inspect --format='{{index .Id}}' ghcr.io/${{ github.repository_owner }}/capita-7-website:latest)
+        echo "DIGEST=$DIGEST" >> $GITHUB_ENV
+ 
+    - name: Log in to Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.CONTAINER_SEC }}
+
+
+  
+    - name: Create Attestation for your Container Image
+      run: |
+        cosign attest --key env://COSIGN_PRIVATE_KEY --predicate imageAttestation.json ghcr.io/${{ github.repository_owner }}/capita-7-website:latest
+      env:
+        COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+
+    - name: Push Container image to GitHub Container Registry
+      run: |
+        docker push ghcr.io/${{ github.repository_owner }}/capita-7-website:latest

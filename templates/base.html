@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.title }}</title>
+    <meta name="description" content="{{ config.description }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="{{ get_url(path="img/brand/ls-lrt-fevicon-2024-final.svg") }}" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ get_url(path="styles/styles.css") | safe }}" />
+
+</head>
+
+    <body class="paper-like bg-opacity-80">
+    <header class=" mx-auto flex flex-wrap bg-pink-50 bg-gradient-to-r from-transparent to-zinc-50 dark:divide-purple-50">
+        
+        <div class="flex flex-wrap px-10 py-10 mt-10 justify-center items-center text-center">
+            <!-- <div class="mx-10 px-10 flex flex-wrap justify-center rounded-2xl border-2 border-blue-600"> -->
+                <div class="mx-10 px-auto ">
+                <ul class="flex">
+                    <a href="/#">
+                        {% set mdata = get_image_metadata(path="img/brand/capita-7-logo.png") %}
+                        {% set w = (mdata.width/2) | int %}
+                        {% set h = (mdata.height/2) | int %}
+
+                        {% set image = resize_image(path="img/brand/capita-7-logo.png", width=w, height=h, op="fit_width") %}
+
+                        <img src="{{ image.url }}" srcset="/{{"img/brand/capita-7-logo.png"}} 2x"/>
+                    
+                    </a>
+                </ul>
+                <!-- <ul class=" flex mx-10 px-10"></ul>
+                <ul class=" flex mx-10 px-10"></ul>
+                <ul class=" flex mx-6 px-6"></ul>
+                <ul class=" flex mx-6 px-6 "></ul>
+                <ul class=" flex mx-6 px-6"></ul> 
+                <ul class=" flex mx-6 px-6"></ul> -->
+
+                
+            </div>
+            <div class="px-auto flex flex-wrap justify-center">
+            <ul class=" px-5 list-none flex space-x-6 py-2 px-auto mx-auto rounded-xl">
+                {% for item in config.extra.my_blog_menu %}
+                <li class=" text-xl text-pink-800 hover:underline hover:text-indigo-600 ">
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"> {{ item.menu}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+    </header>
+    
+    {% block body %}
+    {% endblock %}
+
+    <footer class=" py-4 border-2 border-black bg-white">
+
+        <div class="px-auto flex flex-wrap justify-center">
+            <ul class=" px-5 list-none flex space-x-6 py-2 px-auto mx-auto rounded-xl">
+                {% for item in config.extra.social_handle %}
+                <li class=" text-xl text-pink-800 hover:underline hover:text-indigo-600 ">
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"> {{ item.social_handle}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class=" flex justify-center text-xl text-pink-800 dark:divide-purple-50">               
+            <p> 
+                © {{ config.title }} {{ config.extra.current_year }}
+
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
