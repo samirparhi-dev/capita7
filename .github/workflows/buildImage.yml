@@ -58,6 +58,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.CAPITA7_WRITE }} 
       run: |
+        git config user.email "capita7-github-actions@capita7.com"
+        git config user.name "capita7-github-actions-user"
         git add docs
         git commit -m "Created 'docs' folder "
         git push origin main
