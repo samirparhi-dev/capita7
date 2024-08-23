@@ -1,5 +1,5 @@
 +++
-title = "Knowing me better"
+title = "Purpose Driven, Economical"
 date = 2020-07-09
 path = "products"
 paginate_by = 5
