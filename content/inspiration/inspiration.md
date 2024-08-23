@@ -8,4 +8,4 @@ sort_by = "date"
 +++
 ## We Learn from everyOne.
 
-### More Will be Available here Soon :soon:
+### More Will be Available here :soon:

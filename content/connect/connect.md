@@ -7,6 +7,6 @@ sort_by = "date"
 # template = "about.html"
 +++
 
-### Will be Available here Soon :soon:
+### Will be Available here :soon:
 
 Email Us on: hi@capita7.com .

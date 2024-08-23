@@ -8,4 +8,4 @@ sort_by = "date"
 +++
 ## Good Product 📱 takes time to Arrive.
 
-#### Will be Available here :soon:
+#### Will be Available :soon:

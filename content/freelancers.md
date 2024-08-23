@@ -10,4 +10,4 @@ tags = ["Freelancers"]
 
 
 ## In a Nutshell, Financial, Technical, Moral Booster for you to foster.
-### More Will be Available here Soon :soon:
+### More Will be Available here :soon:
