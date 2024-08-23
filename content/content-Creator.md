@@ -9,7 +9,7 @@ tags = ["creator", "youtube", "influencer" ]
 
 ### We are committed to empowering content creators by providing comprehensive support.Together, we help content creators thrive in the digital landscape.
 
-- ### Monetary Assistance: We help creators pursue their passion without financial constraints.
+- Monetary Assistance: We help creators pursue their passion without financial constraints.
 - Website Creation: We design and develop professional websites tailored to showcase their work.
 - Website Hosting: We ensure their online presence is secure, reliable, and accessible.
 - Technical Assistance: We offer solutions to overcome technical challenges, enabling creators to focus on their craft.

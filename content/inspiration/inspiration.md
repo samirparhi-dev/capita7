@@ -6,4 +6,6 @@ paginate_by = 5
 sort_by = "date"
 # template = "success-stories.html"
 +++
-### Will be Available here Soon :soon:
+## We Learn from everyOne.
+
+### More Will be Available here Soon :soon:
