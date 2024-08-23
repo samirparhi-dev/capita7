@@ -1,7 +1,8 @@
 +++
-title = "Content Creators / influencers 🎞️"
-descriptWeon = " Every Creator has a Story to Tell and we empower Such creators "
+title = "Content Creators / Influencer 🎞️"
+description = "Every Creator has a Story to Tell and we empower Such creators "
 date = 2024-06-13
+# path = "content-creator"
 [taxonomies] 
 tags = ["creator", "youtube", "influencer" ]
 +++
