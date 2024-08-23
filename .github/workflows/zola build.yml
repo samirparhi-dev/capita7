@@ -14,7 +14,4 @@ jobs:
       - name: build to Deploy
         uses: shalzz/zola-deploy-action@v0.19.2
         env:
-          # Target branch
-          OUT_DIR: docs
-          # Provide personal access token
           GITHUB_TOKEN: ${{ secrets.CAPITA7_WRITE }}
