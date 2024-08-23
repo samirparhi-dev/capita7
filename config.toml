@@ -62,7 +62,7 @@ my_blog_menu = [
     {url = "https://capita7.com/about", menu = "About"},
     {url = "https://capita7.com/products", menu = "Products"},
     {url = "https://capita7.com/success-stories", menu = "Success Stories"},
-    {url = "https://capita7.com/Inspirations", menu = "Inspiration"},
+    {url = "https://capita7.com/inspirations", menu = "Inspiration"},
     {url = "mailto:hi@capita7.com", menu = "Connect"},
     
 ]
