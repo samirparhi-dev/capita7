@@ -35,6 +35,22 @@
   text-underline-offset: 15px;
 }
 
+.zigzag-underline-normal {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+  color: purple;
+}
+
+.zigzag-underline-normal-dashed {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+  color: blueviolet;
+}
+
 html, body {
     font-family: "Jura", "Moderustic","IBM Plex Sans", "Space Mono", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
   }
