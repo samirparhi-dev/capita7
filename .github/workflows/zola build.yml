@@ -1,17 +1,18 @@
 name: Zola on GitHub Pages
 
-on:
-    workflow_dispatch:
+on: 
+ push:
+  branches:
+   - main
+
 jobs:
   build:
+    name: Publish site
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: build to Deploy
-        uses: shalzz/zola-deploy-action@v0.19.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.CAPITA7_WRITE }}
+    - name: Checkout main
+      uses: actions/checkout@v4
+    - name: Build and deploy
+      uses: shalzz/zola-deploy-action@v0.18.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.CAPITA7_WRITE }}
