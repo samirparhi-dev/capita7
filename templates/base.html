@@ -49,7 +49,7 @@
             <ul class=" px-5 list-none flex space-x-6 py-2 px-auto mx-auto rounded-xl">
                 {% for item in config.extra.my_blog_menu %}
                 <li class=" text-xl text-pink-800 hover:underline hover:text-indigo-600 ">
-                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"> {{ item.menu}}
+                    <a href="{{ item.url }}"> {{ item.menu}}
                     </a>
                 </li>
                 {% endfor %}
@@ -67,7 +67,7 @@
             <ul class=" px-5 list-none flex space-x-6 py-2 px-auto mx-auto rounded-xl">
                 {% for item in config.extra.social_handle %}
                 <li class=" text-xl text-pink-800 hover:underline hover:text-indigo-600 ">
-                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"> {{ item.social_handle}}
+                    <a href="{{ item.url }}"> {{ item.social_handle}}
                     </a>
                 </li>
                 {% endfor %}
