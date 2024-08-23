@@ -13,5 +13,5 @@ tags = ["creator", "youtube", "influencer" ]
 - Website Creation: We design and develop professional websites tailored to showcase their work.
 - Website Hosting: We ensure their online presence is secure, reliable, and accessible.
 - Technical Assistance: We offer solutions to overcome technical challenges, enabling creators to focus on their craft.
-- Guidance and Promotion: We provide valuable insights and actively promote their content to expand their reach and audience.
+- Guidance and Promotion: We provide valuable insights and actively promote their content to expand their reach and audience
 
