@@ -71,7 +71,7 @@ social_handle = [
     {url = "https://github.com/capita-7", social_handle = "gitHub"},
     {url = "https://github.com/capita-7", social_handle = "LinkedIn"},
     {url = "https://github.com/capita-7", social_handle = "X"},
-    {url = "mailto:info@capita7.com", social_handle = "Mail"}
+    {url = "mailto:hi@capita7.com", social_handle = "Mail"}
 
 ]
 company_logo=[{url="img/brand/capita-7.png"}]
